@@ -86,9 +86,9 @@ def loadfile(fn, num=1):
             th = line[:-1].split('\t')
             x = []
             for i in range(num):
-                print("parsing input",th[i])
                 x.append(int(th[i]))
             ret.append(tuple(x))
+    print("ret len",len(ret))
     return ret
 
 
@@ -225,6 +225,8 @@ def load_data(dataset_str):
     Es, As, Ts, ill = names
     ill = ill[0]
     e = len(set(loadfile(Es[0], 1)) | set(loadfile(Es[1], 1)))
+    print("set(loadfile(Es[0], 1))",len(set(loadfile(Es[0], 1))))
+    print("set(loadfile(Es[1], 1))",len(set(loadfile(Es[1], 1))))
     print("e is ")
     ILL = loadfile(ill, 2)
     illL = len(ILL)
