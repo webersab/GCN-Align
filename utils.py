@@ -208,6 +208,7 @@ def get_weighted_adj(e, KG):
         row.append(key[1])
         col.append(key[0])
         data.append(M[key])
+    print("max ind row", max(row), "e ",e)
     return sp.coo_matrix((data, (row, col)), shape=(e, e))
 
 
@@ -223,6 +224,7 @@ def load_data(dataset_str):
     Es, As, Ts, ill = names
     ill = ill[0]
     e = len(set(loadfile(Es[0], 1)) | set(loadfile(Es[1], 1)))
+    print("e is ")
     ILL = loadfile(ill, 2)
     illL = len(ILL)
     np.random.shuffle(ILL)
