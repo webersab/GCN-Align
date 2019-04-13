@@ -225,9 +225,7 @@ def load_data(dataset_str):
     Es, As, Ts, ill = names
     ill = ill[0]
     e = len(set(loadfile(Es[0], 1)) | set(loadfile(Es[1], 1)))
-    print("set(loadfile(Es[0], 1))",len(set(loadfile(Es[0], 1))))
-    print("set(loadfile(Es[1], 1))",len(set(loadfile(Es[1], 1))))
-    print("e is ")
+    print("e is ",e)
     ILL = loadfile(ill, 2)
     illL = len(ILL)
     np.random.shuffle(ILL)
