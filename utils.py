@@ -86,6 +86,7 @@ def loadfile(fn, num=1):
             th = line[:-1].split('\t')
             x = []
             for i in range(num):
+                print("parsing input",th[i])
                 x.append(int(th[i]))
             ret.append(tuple(x))
     return ret
