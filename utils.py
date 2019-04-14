@@ -84,9 +84,9 @@ def loadfile(fn, num=1):
     with open(fn, encoding='utf-8') as f:
         for line in f:
             th = line[:-1].split('\t')
+            print(str(th))
             x = []
             for i in range(num):
-                print(str(th))
                 x.append(int(th[i]))
             ret.append(tuple(x))
     print("ret len",len(ret))
