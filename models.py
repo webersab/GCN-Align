@@ -220,3 +220,23 @@ class GCN_Align(Model):
                                             dropout=False,
                                             transform=False,
                                             logging=self.logging))
+        
+        self.layers.append(GraphConvolution(input_dim=self.input_dim,
+                                            output_dim=self.output_dim,
+                                            placeholders=self.placeholders,
+                                            act=tf.nn.relu,
+                                            dropout=False,
+                                            featureless=self.featureless,
+                                            sparse_inputs=self.sparse_inputs,
+                                            transform=False,
+                                            init=trunc_normal,
+                                            logging=self.logging))
+
+        self.layers.append(GraphConvolution(input_dim=self.output_dim,
+                                            output_dim=self.output_dim,
+                                            placeholders=self.placeholders,
+                                            act=lambda x: x,
+                                            dropout=False,
+                                            transform=False,
+                                            logging=self.logging))
+

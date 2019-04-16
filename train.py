@@ -17,14 +17,14 @@ tf.set_random_seed(seed)
 flags = tf.app.flags
 FLAGS = flags.FLAGS
 flags.DEFINE_string('lang', 'zh_en', 'Dataset string.')  # 'zh_en', 'ja_en', 'fr_en'
-flags.DEFINE_float('learning_rate', 20, 'Initial learning rate.')
+flags.DEFINE_float('learning_rate', 0.01, 'Initial learning rate.')#original was 20
 flags.DEFINE_integer('epochs', 2000, 'Number of epochs to train.')
-flags.DEFINE_float('dropout', 0., 'Dropout rate (1 - keep probability).')
+flags.DEFINE_float('dropout', 0.1, 'Dropout rate (1 - keep probability).')
 flags.DEFINE_float('gamma', 3.0, 'Hyper-parameter for margin based loss.')
 flags.DEFINE_integer('k', 5, 'Number of negative samples for each positive seed.')
 flags.DEFINE_float('beta', 0.9, 'Weight for structure embeddings.')
-flags.DEFINE_integer('se_dim', 200, 'Dimension for SE.')
-flags.DEFINE_integer('ae_dim', 100, 'Dimension for AE.')
+flags.DEFINE_integer('se_dim', 512, 'Dimension for SE.')
+flags.DEFINE_integer('ae_dim', 512, 'Dimension for AE.')
 flags.DEFINE_integer('seed', 3, 'Proportion of seeds, 3 means 30%')
 
 # Load data
